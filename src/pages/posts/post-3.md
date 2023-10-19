@@ -1,7 +1,7 @@
 ---
 title: 'Beer it is Then'
 pubDate: 2023-10-19
-description: 'Beer for Beer's sake.'
+description: "Beer for Beer's sake."
 author: 'QdB'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
