@@ -1,26 +1,109 @@
 ---
+import "../styles/global.css";
 
+const pageTitle = "About Me";
+const identity = {
+	firstName: "QdB",
+	country: "US",
+	occupation: "Chair Weight",
+	hobbies: ["Disc Golf", "Guitar", "Video Games", "beer", "scotch"],
+};
+
+const skills = [
+	"html",
+	"php",
+	"NextJs",
+	"Windows Administration",
+	"Network Administration",
+	"Hardware",
+];
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset='utf-8' />
+		<link
+			rel='icon'
+			type='image/svg+xml'
+			href='/favicon.svg'
+		/>
+		<meta
+			name='viewport'
+			content='width=device-width'
+		/>
+		<meta
+			name='generator'
+			content={Astro.generator}
+		/>
+		<title>{pageTitle}</title>
+		<style define:vars={{ skillColor, fontWeight, textCase }}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
-		<aside>
-			<h2>go someplace</h2>
-			<a href="/">Home</a>
-			<a href="/blog">Blog</a>
-		</aside>
-		<main>
-			<h2>The Main Section of the About Page</h2>
-			<p>What can I say about me that I don't already know?</p>
-			<p>I am currently building a project in Astro js as I am learning Astro js. So far, so good!!</p>
-		</main>
+		<h1>{pageTitle}</h1>
+		<div class='container'>
+			<aside>
+				<h2>go someplace</h2>
+				<ul>
+					<li><a href='/'>Home</a></li>
+					<li><a href='/blog'>Blog</a></li>
+				</ul>
+			</aside>
+			<main>
+				<h2>The Main Section of the About Page</h2>
+				<p>What can I say about me that I don't already know?</p>
+				<p>
+					I am currently building a project in Astro js as I am learning Astro
+					js. So far, so good!!
+				</p>
+				<p>Here are a few facts about me:</p>
+				<ul>
+					<li>My name is {identity.firstName}.</li>
+					<li>
+						I live in {identity.country} and I work as a {identity.occupation}.
+					</li>
+					{
+						identity.hobbies.length >= 2 && (
+							<li>
+								Two of my hobbies are: {identity.hobbies[0]} and{" "}
+								{identity.hobbies[1]}
+							</li>
+						)
+					}
+				</ul>
+				<p>My skills are:</p>
+				<ul>
+					{skills.map((skill) => <li class='skill'>{skill}</li>)}
+				</ul>
+				<p>This is just like fucking madlibs</p>
+				{happy && <p>I am happy to be learning Astro!</p>}
+
+				{finished && <p>I finished this tutorial!</p>}
+
+				{
+					goal === 3 ? (
+						<p>My goal is to finish in 3 days.</p>
+					) : (
+						<p>My goal is not 3 days.</p>
+					)
+				}
+			</main>
+		</div>
 	</body>
 </html>
