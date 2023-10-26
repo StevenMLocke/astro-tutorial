@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Sidebar from "./../components/Sidebar.astro";
 const pageTitle = "Home";
 ---
 
@@ -24,13 +25,7 @@ const pageTitle = "Home";
 	<body>
 		<h1>{pageTitle}</h1>
 		<div class='container'>
-			<aside>
-				<h2>go someplace</h2>
-				<ul>
-					<li><a href='/about'>About</a></li>
-					<li><a href='/blog'>Blog</a></li>
-				</ul>
-			</aside>
+			<Sidebar />
 			<main>
 				<h2>The Main Section of the Home Page</h2>
 			</main>

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Sidebar from "./../components/Sidebar.astro";
 
 const pageTitle = "About Me";
 const identity = {
@@ -58,13 +59,7 @@ const textCase = "uppercase";
 	<body>
 		<h1>{pageTitle}</h1>
 		<div class='container'>
-			<aside>
-				<h2>go someplace</h2>
-				<ul>
-					<li><a href='/'>Home</a></li>
-					<li><a href='/blog'>Blog</a></li>
-				</ul>
-			</aside>
+			<Sidebar />
 			<main>
 				<h2>The Main Section of the About Page</h2>
 				<p>What can I say about me that I don't already know?</p>
