@@ -1,40 +1,13 @@
 ---
-import "../styles/global.css";
-import Sidebar from "./../components/Sidebar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "bLog";
 ---
 
-<html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<link
-			rel='icon'
-			type='image/svg+xml'
-			href='/favicon.svg'
-		/>
-		<meta
-			name='viewport'
-			content='width=device-width'
-		/>
-		<meta
-			name='generator'
-			content={Astro.generator}
-		/>
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<h1>{pageTitle}</h1>
-		<div class='container'>
-			<Sidebar />
-			<main>
-				<h2>The Main Section of the Blog Page</h2>
-				<p>It looks like this is where blog pages will go.</p>
-				<ul>
-					<li><a href='/posts/post-1'>First</a></li>
-					<li><a href='/posts/post-2'>Necessity</a></li>
-					<li><a href='/posts/post-3'>Beer</a></li>
-				</ul>
-			</main>
-		</div>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<p>It looks like this is where blog pages will go.</p>
+	<ul>
+		<li><a href='/posts/post-1'>First</a></li>
+		<li><a href='/posts/post-2'>Necessity</a></li>
+		<li><a href='/posts/post-3'>Beer</a></li>
+	</ul>
+</BaseLayout>
