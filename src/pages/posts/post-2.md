@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Where Have the ___ Gone?'
 pubDate: 2023-10-19
 description: 'Wondering about musing aloud in the dark.'

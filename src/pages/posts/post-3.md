@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Beer it is Then'
 pubDate: 2023-10-19
 description: 'Beer for Beer''s sake.'
